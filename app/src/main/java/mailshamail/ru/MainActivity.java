@@ -2,8 +2,8 @@ package mailshamail.ru;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    public native String getSerial();
+    public native String getSerial(String text);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +32,11 @@ public class MainActivity extends AppCompatActivity {
         Button getPackages = binding.button2;
 
         TextView tv = binding.sampleText;
-        //tv.setText(stringFromJNI());
 
         getSerial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tv.setText(Build.SERIAL);
+                tv.setText("ID: " + getSerial(Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID)));
             }
         });
 
@@ -49,8 +48,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
-    public native String stringFromJNI();
-
 }

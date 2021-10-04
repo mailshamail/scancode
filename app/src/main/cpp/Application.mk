@@ -1,2 +1,2 @@
-APP_STL := stlport_static
-APP_MODULES := ru
+MY_SOURCE := native-lib.cpp
+LOCAL_SRC_FILES += $(MY_SOURCE)
