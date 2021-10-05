@@ -8,8 +8,22 @@ GetSerial::GetSerial(jstring serial) {
     GetSerial::serial = serial;
 }
 
+GetSerial::GetSerial(jobject list) {
+    GetSerial::arrayList = list;
+}
+
 jstring GetSerial::getSerial() {
     return GetSerial::serial;
 }
+
+jobject GetSerial::getPackages() {
+    return GetSerial::arrayList;
+}
+
+
+
+
+
+
 
 
