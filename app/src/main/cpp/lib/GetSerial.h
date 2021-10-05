@@ -4,8 +4,8 @@
 using namespace std;
 
 class GetSerial {
-    string serial;
+    jstring serial;
 public:
-    GetSerial(string serial);
-    string getSerial();
+    GetSerial(jstring serial);
+    jstring getSerial();
 };

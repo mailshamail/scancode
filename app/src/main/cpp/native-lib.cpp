@@ -14,5 +14,6 @@ extern "C"
 JNIEXPORT jstring
 JNICALL Java_mailshamail_ru_MainActivity_getSerial
         (JNIEnv *env, jobject obj, jstring string) {
-    return string;
+    GetSerial getSerial(string);
+    return getSerial.getSerial();
 }

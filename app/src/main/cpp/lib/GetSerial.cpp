@@ -3,12 +3,12 @@
 //
 
 #include "GetSerial.h"
-
-GetSerial::GetSerial(string serial) {
+#include <jni.h>
+GetSerial::GetSerial(jstring serial) {
     GetSerial::serial = serial;
 }
 
-string GetSerial::getSerial() {
+jstring GetSerial::getSerial() {
     return GetSerial::serial;
 }
 
